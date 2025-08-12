@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ blog.title }} - Detalhes</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; }
+    h1 { color: #333; }
+    img { max-width: 100%; height: auto; margin-bottom: 1rem; }
+    p { color: #555; line-height: 1.4; }
+    a { color: #007bff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 700px; margin: auto; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>{{ blog.title }}</h1>
+
+    {% if blog.imagem %}
+      <img src="{{ blog.imagem.url }}" alt="Imagem da {{ blog.Modelo_da_moto }}">
+    {% endif %}
+
+    <p><strong>Modelo da moto:</strong> {{ blog.Modelo_da_moto }}</p>
+    <p><strong>Informações:</strong> {{ blog.information }}</p>
+    <p><strong>Potência do motor:</strong> {{ blog.motor }} cm³</p>
+
+    <p><a href="{% url 'blog_list' %}">&larr; Voltar para a lista de motos</a></p>
+  </div>
+</body>
+</html>

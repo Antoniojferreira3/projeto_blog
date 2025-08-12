@@ -3,9 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<title>Home - Meu Blog</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 2rem; background: #f9f9f9; }
+  header { margin-bottom: 2rem; }
+  a { color: #007bff; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+</style>
 </head>
 <body>
-Criando meu primeiro blog!
+  <header>
+    <h1>Bem-vindo ao Meu Blog</h1>
+  </header>
+
+  <p>Criando meu primeiro blog!</p>
+
+  <p><a href="{% url 'blog_list' %}">Veja as motos cadastradas</a></p>
 </body>
 </html>

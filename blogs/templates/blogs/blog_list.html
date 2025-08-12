@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
- <meta charset="UTF-8">
- <title>Lista de motos</title>
+  <meta charset="UTF-8">
+  <title>Lista de motos</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #fff; }
+    h1 { color: #333; }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 1rem; }
+    a { font-weight: bold; color: #007bff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    p { margin: 0.3rem 0 0; color: #555; }
+    img { max-width: 100%; height: auto; margin-bottom: 1rem; }
+    hr { border: none; border-top: 1px solid #ddd; margin: 2rem 0; }
+  </style>
 </head>
 <body>
- <h1>Motos Cadastradas</h1>
- {% for blog in blogs %}
-  <h2>{{ blog.title }}</h2>
-  {%if blog.imagem %}
-  <img src="{{blog.imagem.url}}" alt="imagem" style="max-width: 100%;">
-  {%endif%}
-     <p><strong>Potencia do motor:</strong> {{ blog.engine_power }}
-minutos</p>
-   <p><strong>Modelo da moto:</strong> {{ blog.model }}</p>
-   <p><strong>Informações:</strong> {{ blog.information }}</p>
-   <hr>
- {% empty %}
-   <p>Nenhuma moto cadastrada.</p>
- {% endfor %}
+  <h1>Motos Cadastradas</h1>
+
+  {% for blog in blogs %}
+    <article>
+      <h2>{{ blog.title }}</h2>
+
+      {% if blog.imagem %}
+        <img src="{{ blog.imagem.url }}" alt="Imagem da {{ blog.model }}">
+      {% endif %}
+
+      <p><strong>Potência do motor:</strong> {{ blog.motor }} cm³</p>
+      <p><strong>Modelo da moto:</strong> {{ blog.Modelo_da_moto }}</p>
+      <p><strong>Informações:</strong> {{ blog.information }}</p>
+      
+      <hr>
+    </article>
+  {% empty %}
+    <p>Nenhuma moto cadastrada.</p>
+  {% endfor %}
 </body>
 </html>
